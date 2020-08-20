@@ -157,27 +157,7 @@
 
 // JQuery scripts
 $( document ).ready(function() {
-	console.log("                /|         ,");
-	console.log("              ,///        /|");
-	console.log("             // //     ,///");
-	console.log("            // //     // //");
-	console.log("           // //     || ||");
-	console.log("           || ||    // //");
-	console.log("           || ||   // //");
-	console.log("           || ||  // //");
-	console.log("           || || || ||");
-	console.log("           \\\\,\\|,|\\_//");
-	console.log("            \\\\)\\)\\\\|/");
-	console.log("            )-.\"\" .-(");
-	console.log("           //^\\` `/^\\\\");
-	console.log("          //  |   |  \\\\");
-	console.log("        ,/_| 0| _ | 0|_\\,");
-	console.log("      /`    `\"=.v.=\"`    `\\");
-	console.log("     /`    _.\"{_,_}\"._    `\\");
-	console.log("     `/`  ` \\  |||  / `  `\\`");
-	console.log("     `\\\",_  \\\\=^~^=//  _,\"`");
-	console.log("          \"=,\\'-=-'/,=\"");
-	console.log("              '---'");
+	console.log("                  /|         ,\n                ,///        /|\n               // //     ,///\n              // //     // //\n             // //     || ||\n             || ||    // //\n             || ||   // //\n             || ||  // //\n             || || || ||\n             \\\\,\\|,|\\_//\n              \\\\)\\)\\\\|/\n              )-.\"\" .-(\n             //^\\` `/^\\\\\n            //  |   |  \\\\\n          ,/_| 0| _ | 0|_\\,\n        /`    `\"=.v.=\"`    `\\\n       /`    _.\"{_,_}\"._    `\\\n       `/`  ` \\  |||  / `  `\\`\n       `\\\",_  \\\\=^~^=//  _,\"`\n            \"=,\\'-=-'/,=\"\n                '---'\n");
 	console.log( "quit lurkin" );
 
 
@@ -200,5 +180,55 @@ $( document ).ready(function() {
 		$('#contactModal').css("display","none");
 
 	})
+
+	//Link Styles
+	$("#ProjectPage").scroll(function() {
+		
+		//1st tab
+		if ($(this).scrollTop() < 400) {
+		//   $("#firstTab").focus();
+		  $("#firstTab").addClass("slideshow__nav-item--current");
+		}
+		else {
+		  $("#firstTab").removeClass("slideshow__nav-item--current");
+		//   $("#firstTab").blur();
+		}
+		//2st tab
+		// 1200 500
+		if ($(this).scrollTop() < 650 && $(this).scrollTop() > 400) {
+			$("#secondTab").addClass("slideshow__nav-item--current");
+		  }
+		  else {
+			$("#secondTab").removeClass("slideshow__nav-item--current");
+		  }
+		//3rd tab
+		if ($(this).scrollTop() < 900 && $(this).scrollTop() > 650) {
+		  $("#thirdTab").addClass("slideshow__nav-item--current");
+		}
+		else {
+		  $("#thirdTab").removeClass("slideshow__nav-item--current");
+		}
+		//4th tab
+		if ($(this).scrollTop() < 1250 && $(this).scrollTop() > 900) {
+		  $("#fourthTab").addClass("slideshow__nav-item--current");
+		}
+		else {
+		  $("#fourthTab").removeClass("slideshow__nav-item--current");
+		}
+		//5th tab
+		if ($(this).scrollTop() < 1600 && $(this).scrollTop() > 1250) {
+		  $("#fifthTab").addClass("slideshow__nav-item--current");
+		}
+		else {
+		  $("#fifthTab").removeClass("slideshow__nav-item--current");
+		}
+		//6th tab
+		if ($(this).scrollTop() > 1600) {
+			$("#sixthTab").addClass("slideshow__nav-item--current");
+		  }
+		  else {
+			$("#sixthTab").removeClass("slideshow__nav-item--current");
+		  }
+	  });
 
 });
