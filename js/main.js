@@ -157,6 +157,7 @@
 
 // JQuery scripts
 $( document ).ready(function() {
+	// Ascii art
 	console.log("                  /|         ,\n                ,///        /|\n               // //     ,///\n              // //     // //\n             // //     || ||\n             || ||    // //\n             || ||   // //\n             || ||  // //\n             || || || ||\n             \\\\,\\|,|\\_//\n              \\\\)\\)\\\\|/\n              )-.\"\" .-(\n             //^\\` `/^\\\\\n            //  |   |  \\\\\n          ,/_| 0| _ | 0|_\\,\n        /`    `\"=.v.=\"`    `\\\n       /`    _.\"{_,_}\"._    `\\\n       `/`  ` \\  |||  / `  `\\`\n       `\\\",_  \\\\=^~^=//  _,\"`\n            \"=,\\'-=-'/,=\"\n                '---'\n");
 	console.log( "quit lurkin" );
 
@@ -175,7 +176,6 @@ $( document ).ready(function() {
 	})
 
 	$('.close').on('click', () => {
-		console.log($('#aboutModal'))
 		$('#aboutModal').css("display","none");
 		$('#contactModal').css("display","none");
 
@@ -194,7 +194,6 @@ $( document ).ready(function() {
 		//   $("#firstTab").blur();
 		}
 		//2st tab
-		// 1200 500
 		if ($(this).scrollTop() < 650 && $(this).scrollTop() > 400) {
 			$("#secondTab").addClass("slideshow__nav-item--current");
 		  }
@@ -230,5 +229,99 @@ $( document ).ready(function() {
 			$("#sixthTab").removeClass("slideshow__nav-item--current");
 		  }
 	  });
+
+
+
+	//   form submit
+	
+	$('#submitBtn').on('click', (e) => {
+		e.preventDefault();
+
+
+		var name = $("#name").val()
+		var email = $("#email").val()
+		var msg = $("#msg").val()
+
+		var data = {
+			name: name,
+			email: email,
+			message: msg
+		};
+		// console.log(data)
+		console.log($('#contactForm').serialize())
+		var valid = verifyName(name) &&
+			verifyEmail(email) &&
+			verifyMsg(msg);
+		// var valid = true;
+		
+		if (valid) {
+			submitForm(data)
+		} 
+
+
+
+	})
+
+	function submitForm(data) {
+		$.ajax({
+			type: "POST",
+			url: "https://formspree.io/mnqgyogq", 
+			data: data,
+			dataType: "json",
+			timeout: 1500,
+			success: () => {
+				console.log("success");
+				handleSuccess();
+			},
+			error: (err) => {
+				$('#form-status').css("color", 'red')
+				$('#form-status').text("Error sending message")
+			}
+		})
+	}
+
+	function verifyName(name) {
+		const re = /^[a-zA-Z]{2,20}$/;
+		if(!re.test(name)) {
+		//   name.classList.add('is-invalid');
+		  console.log("bro, thats not a real name")
+		  $('#form-status').css("color", 'red')
+		  $('#form-status').text("bro, thats not a real name")
+		  return false;
+		} else {
+			return true;
+		}
+	  }
+	  
+	  function verifyEmail(email) {
+		const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+		if(!re.test(email)) {
+			$('#form-status').css("color", 'red')
+			$('#form-status').text("invalid email")
+		} else {
+			return true;
+		}
+	  }
+
+	  function verifyMsg(msg) {
+		if (msg.length <= 0) {
+			$('#form-status').css("color", 'red')
+			$('#form-status').text("please enter a message")
+			return false;
+	  	} else {
+			return true;
+		}
+	  }
+
+	  function handleSuccess() {
+		$('#name').prop("disabled", true);
+		$('#email').prop("disabled", true);
+		$('#msg').prop("disabled", true);
+		$('#submitBtn').prop("disabled", true);
+		$('#contactForm').trigger("reset")
+		$('#form-status').css("color", 'black')
+		$('#form-status').text("Thank you")
+	  }
+	
 
 });

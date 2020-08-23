@@ -37,21 +37,40 @@
 				<div class="modal-content">
 				<span class="close">&times;</span>
 				<p style="font-size: 22px; position: relative;">About Me</p>
-				<p>I am graduate from University of Maryland Baltimore County specializing in Computer Science and Economics considering myself to be a veteran in building full scale products/services hoping to empower organizations and individuals. Throughout my entire career I have helped organize events such as Hackathons acquiring sponsorships building meaningful relationships with individuals and teaching beginners how to code. I strive to apply these skills with other driven individuals to facilitate discussions bringing new and creative ideas to build constructive products/services which can be used to make the world more efficient and better place. I am always hungry to work with other driven individuals who want to learn and master new technologies
-
-					My other hobbies include lifting, cooking (I make a mean stir fry), running, investing, drawing, collecting music (mainly Hip-Hop) </p>
+				<p>I am graduate from University of Maryland Baltimore County specializing in Computer Science and Economics considering myself
+					 to be a veteran in building full scale products/services hoping to empower organizations and individuals. 
+					 I have worked in the industry with many agencies and organizations including The U.S. House of Representatives, EPA, and NASA
+					 building proprietery full stack services and web applications. Aside form that, throughout my career I have helped organize events, 
+					 such as Hackathons acquiring sponsorships building meaningful relationships with individuals and teaching beginners how to code. 
+					 I strive to apply these skills with other driven individuals to facilitate discussions bringing new and creative ideas 
+					 to build constructive products/services which can be used to make the world more efficient and better place. 
+					 I am always hungry to work with other driven individuals who want to learn and master new technologies.
+					 My other hobbies include lifting, cooking (I make a mean stir fry), running, investing, drawing, collecting music (mainly Hip-Hop).
+					 Below, I have listed some of the open source and personal projects that I have devoted time towards. 
+					 If you would like to reach out for freelancing/consulting reach out from the contact page</p>
 				</div>
 			</div>
 			<!-- Contact Modal -->
 			<div id="contactModal" class="modal">
 				<!-- Modal content -->
 				<div class="modal-content">
-				<span class="close">&times;</span>
-				<p style="font-size: 22px; position: relative;">Contact</p>
-				<p>
-					email: pranav.manik@gmail.com <br><br>
-					<a href="https://www.linkedin.com/in/pranav-maniktala-21477116b/" target="_blank"> linkedin</a>
-				</p>
+					<span class="close">&times;</span>
+					<p style="font-size: 22px; position: relative; margin-left: 10%;">Contact</p>
+					<div id="formContainer">
+						<form action="https://formspree.io/mnqgyogq" method="POST" id="contactForm">
+							<div>
+								<input type="text" name="name" placeholder="name" id="name">
+							</div>
+							<div>
+								<input type="email" name="_replyto" placeholder="email" id="email">
+							</div>
+							<div>
+								<textarea type="type" name="_replyto" placeholder="message" id="msg" rows="4"></textarea>
+							</div>
+							<button type="button" id="submitBtn">Send</button>
+							<p id="form-status"></p>
+						</form>
+					</div>
 				</div>
 			</div>
 
@@ -193,7 +212,7 @@
 				</div>
 				<div class="intro__content intro__content--second animatable">
 					<h3 class="intro__content-title animatable">Philosophy</h3>
-					<p class="intro__content-text animatable">Couldnt think of a fake deep quote so I guess imma just leave this up here for ~~aesthethics~~</p>
+					<p class="intro__content-text animatable">couldn't think of a fake deep quote so I guess imma just leave this up here for ~~aesthethics~~</p>
 					<!-- <p class="intro__content-text animatable">Thundercats hella sartorial occupy portland DIY raclette mlkshk poke DIY chambray franzen tattooed thundercats master</p> -->
 				</div>
 				<div class="intro__content intro__content--forth animatable">
@@ -211,5 +230,10 @@
 		<script src="js/anime.min.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/main.js"></script>
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
+		<!-- <script type="text/babel" src="js/Form.js"></script> -->
 	</body>
 </html>
