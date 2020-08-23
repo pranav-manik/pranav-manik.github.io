@@ -746,19 +746,32 @@ main {
 
 input, textarea {
 	width: 100%;
-	/* padding: 12px 20px; */
 	margin: 3px 0;
 	box-sizing: border-box;
 	background-color: #DADAD3;
-	/* font-color: #ffffff; */
 }
 
+/* input, textarea, button {font-family: inherit} */
 
 #submitBtn {
 	/* align-self: flex-end; */
 	float: right;
 	margin-top: 10px;
-	/* left: 20%; */
+	display: block;
+	background-color: #a0a09f;
+	border: 1px solid black;
+	border-radius: 2px;
+	padding: 1vh 1vh;
+	font-family: inherit;
+	font-style: inherit;
+	cursor: pointer;
+	transition: ease .3s;
+}
+
+#submitBtn:hover {
+	opacity: .9;
+	box-shadow: 1px 1px;
+  	transition: ease .3s;
 }
 
 @media screen and (max-width: 67em) {

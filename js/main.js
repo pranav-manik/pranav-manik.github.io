@@ -248,7 +248,6 @@ $( document ).ready(function() {
 			message: msg
 		};
 		// console.log(data)
-		console.log($('#contactForm').serialize())
 		var valid = verifyName(name) &&
 			verifyEmail(email) &&
 			verifyMsg(msg);
@@ -284,7 +283,6 @@ $( document ).ready(function() {
 		const re = /^[a-zA-Z]{2,20}$/;
 		if(!re.test(name)) {
 		//   name.classList.add('is-invalid');
-		  console.log("bro, thats not a real name")
 		  $('#form-status').css("color", 'red')
 		  $('#form-status').text("bro, thats not a real name")
 		  return false;
