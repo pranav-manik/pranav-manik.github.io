@@ -281,7 +281,7 @@ $( document ).ready(function() {
 
 	function verifyName(name) {
 		// const re = /^[a-zA-Z]{2,20}$/;
-		const re = /^[a-zA-Z ,.'-]+$/
+		const re = /^[a-zA-Z ,.'-]+$/;
 		if(!re.test(name)) {
 		//   name.classList.add('is-invalid');
 		  $('#form-status').css("color", 'red')

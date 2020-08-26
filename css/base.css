@@ -751,6 +751,13 @@ input, textarea {
 	background-color: #DADAD3;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 /* input, textarea, button {font-family: inherit} */
 
 #submitBtn {
