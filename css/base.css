@@ -782,6 +782,35 @@ button:focus {
   	transition: ease .3s;
 }
 
+li {
+    margin-bottom: 10px;
+}
+
+.cool-link {
+	font-weight: bold;
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .2s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    //transition: width .15s;
+}
+
+p {
+	line-height: 20px;
+	}
+
 @media screen and (max-width: 67em) {
 	.modal-content {
 		width: 80%;
