@@ -175,9 +175,15 @@ $( document ).ready(function() {
 
 	})
 
+	$('#seedBaseInfoBtn').on('click', () => {
+		$('#seedBaseInfo').css("display","block");
+
+	})
+
 	$('.close').on('click', () => {
 		$('#aboutModal').css("display","none");
 		$('#contactModal').css("display","none");
+		$('#seedBaseInfo').css("display","none");
 
 	})
 

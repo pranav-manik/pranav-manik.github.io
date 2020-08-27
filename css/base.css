@@ -657,6 +657,7 @@ main {
 		/* transition: ease .2s; */
 	}
 	.link {
+		cursor: pointer;
 		color: #000;
 	}
 	.link:hover {
@@ -695,7 +696,7 @@ main {
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%;
+	width: 70%;
 
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.25s;
@@ -782,6 +783,9 @@ button:focus {
 }
 
 @media screen and (max-width: 67em) {
+	.modal-content {
+		width: 80%;
+	}
 	#formContainer {
 		width: 80%;
 	}
