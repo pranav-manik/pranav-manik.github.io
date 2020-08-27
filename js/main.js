@@ -152,181 +152,186 @@
 	}
 
 	const panel = new Panel(DOM.intro.querySelector('.intro__box'));
-}
-
-
-// JQuery scripts
-$( document ).ready(function() {
-	// Ascii art
-	console.log("                  /|         ,\n                ,///        /|\n               // //     ,///\n              // //     // //\n             // //     || ||\n             || ||    // //\n             || ||   // //\n             || ||  // //\n             || || || ||\n             \\\\,\\|,|\\_//\n              \\\\)\\)\\\\|/\n              )-.\"\" .-(\n             //^\\` `/^\\\\\n            //  |   |  \\\\\n          ,/_| 0| _ | 0|_\\,\n        /`    `\"=.v.=\"`    `\\\n       /`    _.\"{_,_}\"._    `\\\n       `/`  ` \\  |||  / `  `\\`\n       `\\\",_  \\\\=^~^=//  _,\"`\n            \"=,\\'-=-'/,=\"\n                '---'\n");
-	console.log( "quit lurkin" );
 
 
 
-	// handle modals
-
-	$('#aboutBtn').on('click', () => {
-		$('#aboutModal').css("display","block");
-
-	})
-	
-	$('#contactBtn').on('click', () => {
-		$('#contactModal').css("display","block");
-
-	})
-
-	$('#seedBaseInfoBtn').on('click', () => {
-		$('#seedBaseInfo').css("display","block");
-
-	})
-
-	$('.close').on('click', () => {
-		$('#aboutModal').css("display","none");
-		$('#contactModal').css("display","none");
-		$('#seedBaseInfo').css("display","none");
-
-	})
-
-	//Link Styles
-	$("#ProjectPage").scroll(function() {
-		
-		//1st tab
-		if ($(this).scrollTop() < 400) {
-		//   $("#firstTab").focus();
-		  $("#firstTab").addClass("slideshow__nav-item--current");
-		}
-		else {
-		  $("#firstTab").removeClass("slideshow__nav-item--current");
-		//   $("#firstTab").blur();
-		}
-		//2st tab
-		if ($(this).scrollTop() < 650 && $(this).scrollTop() > 400) {
-			$("#secondTab").addClass("slideshow__nav-item--current");
-		  }
-		  else {
-			$("#secondTab").removeClass("slideshow__nav-item--current");
-		  }
-		//3rd tab
-		if ($(this).scrollTop() < 900 && $(this).scrollTop() > 650) {
-		  $("#thirdTab").addClass("slideshow__nav-item--current");
-		}
-		else {
-		  $("#thirdTab").removeClass("slideshow__nav-item--current");
-		}
-		//4th tab
-		if ($(this).scrollTop() < 1250 && $(this).scrollTop() > 900) {
-		  $("#fourthTab").addClass("slideshow__nav-item--current");
-		}
-		else {
-		  $("#fourthTab").removeClass("slideshow__nav-item--current");
-		}
-		//5th tab
-		if ($(this).scrollTop() < 1600 && $(this).scrollTop() > 1250) {
-		  $("#fifthTab").addClass("slideshow__nav-item--current");
-		}
-		else {
-		  $("#fifthTab").removeClass("slideshow__nav-item--current");
-		}
-		//6th tab
-		if ($(this).scrollTop() > 1600) {
-			$("#sixthTab").addClass("slideshow__nav-item--current");
-		  }
-		  else {
-			$("#sixthTab").removeClass("slideshow__nav-item--current");
-		  }
-	  });
+	// JQuery scripts, checks if doc ready
+	$( document ).ready(function() {
+		// Ascii art
+		console.log("                  /|         ,\n                ,///        /|\n               // //     ,///\n              // //     // //\n             // //     || ||\n             || ||    // //\n             || ||   // //\n             || ||  // //\n             || || || ||\n             \\\\,\\|,|\\_//\n              \\\\)\\)\\\\|/\n              )-.\"\" .-(\n             //^\\` `/^\\\\\n            //  |   |  \\\\\n          ,/_| 0| _ | 0|_\\,\n        /`    `\"=.v.=\"`    `\\\n       /`    _.\"{_,_}\"._    `\\\n       `/`  ` \\  |||  / `  `\\`\n       `\\\",_  \\\\=^~^=//  _,\"`\n            \"=,\\'-=-'/,=\"\n                '---'\n");
+		console.log( "quit lurkin" );
 
 
 
-	//   form submit
-	
-	$('#submitBtn').on('click', (e) => {
-		e.preventDefault();
+		// handle modals
 
+		$('#aboutBtn').on('click', () => {
+			$('#aboutModal').css("display","block");
 
-		var name = $("#name").val()
-		var email = $("#email").val()
-		var msg = $("#msg").val()
-
-		var data = {
-			name: name,
-			email: email,
-			message: msg
-		};
-		// console.log(data)
-		var valid = verifyName(name) &&
-			verifyEmail(email) &&
-			verifyMsg(msg);
-		// var valid = true;
-		
-		if (valid) {
-			submitForm(data)
-		} 
-
-
-
-	})
-
-	function submitForm(data) {
-		$.ajax({
-			type: "POST",
-			url: "https://formspree.io/mnqgyogq", 
-			data: data,
-			dataType: "json",
-			timeout: 1500,
-			success: () => {
-				console.log("success");
-				handleSuccess();
-			},
-			error: (err) => {
-				$('#form-status').css("color", 'red')
-				$('#form-status').text("Error sending message")
-			}
 		})
-	}
+		
+		$('#contactBtn').on('click', () => {
+			$('#contactModal').css("display","block");
 
-	function verifyName(name) {
-		// const re = /^[a-zA-Z]{2,20}$/;
-		const re = /^[a-zA-Z ,.'-]+$/;
-		if(!re.test(name)) {
-		//   name.classList.add('is-invalid');
-		  $('#form-status').css("color", 'red')
-		  $('#form-status').text("bro, thats not a real name")
-		  return false;
-		} else {
-			return true;
-		}
-	  }
-	  
-	  function verifyEmail(email) {
-		const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-		if(!re.test(email)) {
-			$('#form-status').css("color", 'red')
-			$('#form-status').text("invalid email")
-		} else {
-			return true;
-		}
-	  }
+		})
 
-	  function verifyMsg(msg) {
-		if (msg.length <= 0) {
+		$('#seedBaseInfoBtn').on('click', () => {
+			$('#seedBaseInfo').css("display","block");
+
+		})
+
+		$('.close').on('click', () => {
+			$('#aboutModal').css("display","none");
+			$('#contactModal').css("display","none");
+			$('#seedBaseInfo').css("display","none");
+
+		})
+
+		//Link Styles
+		$("#ProjectPage").scroll(function() {
+			
+			//1st tab
+			if ($(this).scrollTop() < 400) {
+			//   $("#firstTab").focus();
+			$("#firstTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+			$("#firstTab").removeClass("slideshow__nav-item--current");
+			//   $("#firstTab").blur();
+			}
+			//2st tab
+			if ($(this).scrollTop() < 650 && $(this).scrollTop() > 400) {
+				$("#secondTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+				$("#secondTab").removeClass("slideshow__nav-item--current");
+			}
+			//3rd tab
+			if ($(this).scrollTop() < 900 && $(this).scrollTop() > 650) {
+			$("#thirdTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+			$("#thirdTab").removeClass("slideshow__nav-item--current");
+			}
+			//4th tab
+			if ($(this).scrollTop() < 1250 && $(this).scrollTop() > 900) {
+			$("#fourthTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+			$("#fourthTab").removeClass("slideshow__nav-item--current");
+			}
+			//5th tab
+			if ($(this).scrollTop() < 1600 && $(this).scrollTop() > 1250) {
+			$("#fifthTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+			$("#fifthTab").removeClass("slideshow__nav-item--current");
+			}
+			//6th tab
+			if ($(this).scrollTop() > 1600) {
+				$("#sixthTab").addClass("slideshow__nav-item--current");
+			}
+			else {
+				$("#sixthTab").removeClass("slideshow__nav-item--current");
+			}
+		});
+
+
+
+		//   form submit
+		
+		$('#submitBtn').on('click', (e) => {
+			e.preventDefault();
+
+
+			var name = $("#name").val()
+			var email = $("#email").val()
+			var msg = $("#msg").val()
+
+			var data = {
+				name: name,
+				email: email,
+				message: msg
+			};
+			// console.log(data)
+			var valid = verifyName(name) &&
+				verifyEmail(email) &&
+				verifyMsg(msg);
+			// var valid = true;
+			
+			if (valid) {
+				submitForm(data)
+			} 
+
+
+
+		})
+
+		function submitForm(data) {
+			$.ajax({
+				type: "POST",
+				url: "https://formspree.io/mnqgyogq", 
+				data: data,
+				dataType: "json",
+				timeout: 1500,
+				success: () => {
+					console.log("success");
+					handleSuccess();
+				},
+				error: (err) => {
+					$('#form-status').css("color", 'red')
+					$('#form-status').text("Error sending message")
+				}
+			})
+		}
+
+		function verifyName(name) {
+			// const re = /^[a-zA-Z]{2,20}$/;
+			const re = /^[a-zA-Z ,.'-]+$/;
+			if(!re.test(name)) {
+			//   name.classList.add('is-invalid');
 			$('#form-status').css("color", 'red')
-			$('#form-status').text("please enter a message")
+			$('#form-status').text("bro, thats not a real name")
 			return false;
-	  	} else {
-			return true;
+			} else {
+				return true;
+			}
 		}
-	  }
+		
+		function verifyEmail(email) {
+			const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+			if(!re.test(email)) {
+				$('#form-status').css("color", 'red')
+				$('#form-status').text("invalid email")
+			} else {
+				return true;
+			}
+		}
 
-	  function handleSuccess() {
-		$('#name').prop("disabled", true);
-		$('#email').prop("disabled", true);
-		$('#msg').prop("disabled", true);
-		$('#submitBtn').prop("disabled", true);
-		$('#contactForm').trigger("reset")
-		$('#form-status').css("color", 'black')
-		$('#form-status').text("Thank you")
-	  }
-	
+		function verifyMsg(msg) {
+			if (msg.length <= 0) {
+				$('#form-status').css("color", 'red')
+				$('#form-status').text("please enter a message")
+				return false;
+			} else {
+				return true;
+			}
+		}
 
-});
+		function handleSuccess() {
+			$('#name').prop("disabled", true);
+			$('#email').prop("disabled", true);
+			$('#msg').prop("disabled", true);
+			$('#submitBtn').prop("disabled", true);
+			$('#contactForm').trigger("reset")
+			$('#form-status').css("color", 'black')
+			$('#form-status').text("Thank you")
+		}
+
+		//handle routes
+		if ($(location).attr('href').split('?')[1] == 'project=seedbase') {
+			$('#seedBaseInfo').css("display","block");
+		}
+
+	});
+}
