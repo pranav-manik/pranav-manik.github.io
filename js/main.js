@@ -330,8 +330,10 @@
 
 		//handle routes
 		if ($(location).attr('href').split('?')[1] == 'project=seedbase') {
-			$('#seedBaseInfo').css("display","block");
+			panel.close()
+			setTimeout(() => {  $('#seedBaseInfo').css("display","block"); }, 500);	
 		}
+
 
 	});
 }
