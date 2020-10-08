@@ -704,6 +704,12 @@ main {
 	animation-duration: 0.25s
   }
 
+  .about-div {
+	width: 70%;
+	margin-left: auto;
+  	margin-right: auto;
+  }
+
   /* Add Animation */
 @-webkit-keyframes animatetop {
 	from {top:-300px; opacity:0} 
@@ -742,7 +748,7 @@ main {
     flex-direction: column;
 	border-color: black;
 	color: black;
-	text-align: center;
+	/* text-align: center; */
 }
 
 input, textarea {
@@ -821,5 +827,10 @@ p {
 	input, textarea {
 		width: 100%;
 	}
+	.about-div {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	  }
 
 }

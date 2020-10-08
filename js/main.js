@@ -334,6 +334,17 @@
 			setTimeout(() => {  $('#seedBaseInfo').css("display","block"); }, 500);	
 		}
 
+		
+		if ($(location).attr('href').split('?')[1] == 'page=about') {
+			panel.close()
+			setTimeout(() => {  $('#aboutModal').css("display","block"); }, 500);
+		}
+
+		if ($(location).attr('href').split('?')[1] == 'page=contact') {
+			panel.close()
+			setTimeout(() => {  $('#contactModal').css("display","block"); }, 500);
+		}
+
 
 	});
 }
