@@ -815,7 +815,22 @@ li {
 
 p {
 	line-height: 20px;
-	}
+}
+
+.speech-bubble {
+	position: relative;
+	background: #046c3f;
+	border-radius: .4em;
+	/* width: 40px; */
+	display:inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #fff;
+	font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+	font-size: 0.8em;
+	border: 2px solid #046c3f;
+}
 
 @media screen and (max-width: 67em) {
 	.modal-content {
