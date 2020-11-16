@@ -291,7 +291,7 @@
 			if(!re.test(name)) {
 			//   name.classList.add('is-invalid');
 			$('#form-status').css("color", 'red')
-			$('#form-status').text("bro, thats not a real name")
+			$('#form-status').text("Please enter a real name")
 			return false;
 			} else {
 				return true;
