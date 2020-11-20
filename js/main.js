@@ -344,7 +344,21 @@
 			panel.close()
 			setTimeout(() => {  $('#contactModal').css("display","block"); }, 500);
 		}
+		
 
+		// Open site if enter pressed
+		$(document).on('keyup', function(event) {
+			if(!$(event.target).is(':input')){
+			   if(event.keyCode== 13) {
+				if (panel.isOpen) {
+					panel.close()
+				}
+				else {
+					panel.open()
+				}
+			   }
+			}
+		});
 
 	});
 }
