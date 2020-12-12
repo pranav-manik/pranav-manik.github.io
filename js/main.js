@@ -349,7 +349,7 @@
 		// Open site if enter pressed
 		$(document).on('keyup', function(event) {
 			if(!$(event.target).is(':input')){
-			   if(event.keyCode== 13) {
+			   if(event.keyCode== 13 || event.keyCode== 32) {
 				if (panel.isOpen) {
 					panel.close()
 				}
