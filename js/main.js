@@ -180,10 +180,16 @@
 
 		})
 
+		$('#ucnInfoBtn').on('click', () => {
+			$('#ucnInfo').css("display","block");
+
+		})
+
 		$('.close').on('click', () => {
 			$('#aboutModal').css("display","none");
 			$('#contactModal').css("display","none");
 			$('#seedBaseInfo').css("display","none");
+			$('#ucnInfo').css("display","none");
 
 		})
 
@@ -334,6 +340,12 @@
 			setTimeout(() => {  $('#seedBaseInfo').css("display","block"); }, 500);	
 		}
 
+		//handle routes
+		if ($(location).attr('href').split('?')[1] == 'project=ucn') {
+			panel.close()
+			setTimeout(() => {  $('#ucnInfo').css("display","block"); }, 500);	
+		}
+
 		
 		if ($(location).attr('href').split('?')[1] == 'page=about') {
 			panel.close()
@@ -358,7 +370,13 @@
 				}
 			   }
 			}
+			if (event.key == "Escape") {
+				$('#aboutModal').css("display","none");
+				$('#contactModal').css("display","none");
+				$('#seedBaseInfo').css("display","none");
+				$('#ucnInfo').css("display","none");
+			}
 		});
-
+		// panel.close()
 	});
 }
