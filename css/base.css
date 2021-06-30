@@ -348,6 +348,12 @@ main {
 .ucn-subtitle-item {
 	color: #a0640b;
 	max-width: 300px;
+	display: none;
+}
+.mobile-ucn-subtitle-item {
+	color: #a0640b;
+	max-width: 300px;
+	display: inline-block;
 }
 .todo-title-item {
 	color: #a86b0f;
@@ -665,6 +671,15 @@ main {
 		max-width: 350px;
 		left: 27vh;
 		position: absolute;
+		display: inline-block;
+
+	}
+	.mobile-ucn-subtitle-item {
+		color: #aaa;
+		max-width: 350px;
+		left: 27vh;
+		position: absolute;
+		display: none;
 
 	}
 	.ucn-link-item {
