@@ -192,6 +192,21 @@
 			$('#ucnInfo').css("display","none");
 
 		})
+		
+		// if clicked off modal close
+		$(document).click(function(event) {
+			var target = $(event.target);
+			if (target.is("#ucnInfo") 
+				|| target.is("#aboutModal") 
+				|| target.is("#contactModal") 
+				|| target.is("#seedBaseInfo") 
+			) {
+				$('#aboutModal').css("display","none");
+				$('#contactModal').css("display","none");
+				$('#seedBaseInfo').css("display","none");
+				$('#ucnInfo').css("display","none");
+			}
+		});
 
 		//Link Styles
 		$("#ProjectPage").scroll(function() {
