@@ -888,6 +888,14 @@ p {
 	line-height: 20px;
 }
 
+.gh-stats {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	margin-bottom: 5%;
+}
+
 .speech-bubble {
 	position: relative;
 	background: #046c3f;
@@ -918,5 +926,8 @@ p {
 		margin-left: auto;
 		margin-right: auto;
 	  }
+	  .gh-stats {
+		display: none;
+	}
 
 }
