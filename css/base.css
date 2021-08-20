@@ -911,6 +911,13 @@ p {
 	border: 2px solid #046c3f;
 }
 
+#center-404 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+  }
+
 @media screen and (max-width: 67em) {
 	.modal-content {
 		width: 80%;
@@ -929,5 +936,8 @@ p {
 	  .gh-stats {
 		display: none;
 	}
+	#center-404 {
+		width: 100%;
+	  }
 
 }
