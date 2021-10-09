@@ -348,12 +348,6 @@ main {
 .ucn-subtitle-item {
 	color: #a0640b;
 	max-width: 300px;
-	display: none;
-}
-.mobile-ucn-subtitle-item {
-	color: #a0640b;
-	max-width: 300px;
-	display: inline-block;
 }
 .todo-title-item {
 	color: #a86b0f;
@@ -502,6 +496,7 @@ main {
 	background-size: cover;
 }
 
+/* Desktop only */
 @media screen and (min-width: 67em) {
 	.intro {
 		display: grid;
@@ -674,18 +669,10 @@ main {
 		display: inline-block;
 
 	}
-	.mobile-ucn-subtitle-item {
-		color: #aaa;
-		max-width: 350px;
-		left: 27vh;
-		position: absolute;
-		display: none;
-
-	}
 	.ucn-link-item {
 		color: #000;
 		left: 26vh;
-		top: 32vh;
+		top: 20vh;
 		position: absolute;
 	}
 	.ucn-link {
@@ -737,6 +724,10 @@ main {
 		display: inline-block;
 		/* border: 1px solid #ccc; */
 		margin: 1%;
+	}
+
+	abbr {
+		color: #000;
 	}
 }
 
@@ -918,6 +909,7 @@ p {
 	width: 60%;
   }
 
+/* Mobile only */
 @media screen and (max-width: 67em) {
 	.modal-content {
 		width: 80%;
@@ -939,5 +931,5 @@ p {
 	#center-404 {
 		width: 100%;
 	  }
-
+	
 }
