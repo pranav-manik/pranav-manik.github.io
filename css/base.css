@@ -872,7 +872,7 @@ li {
 
 .cool-link:hover::after {
     width: 100%;
-    //transition: width .15s;
+    /* //transition: width .15s; */
 }
 
 p {
