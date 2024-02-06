@@ -610,7 +610,7 @@ main {
 		padding: 0;
 	}
 	.slideshow__item-subtitle {
-		color: #aaa;
+		color: #000000;
 	}
 	.slideshow__item-subtitle-three {
 		color: #aaa;
@@ -667,7 +667,7 @@ main {
 		/* position: absolute; */
 	}
 	.ucn-subtitle-item {
-		color: #aaa;
+		color: #000000;
 		max-width: 350px;
 		left: 27vh;
 		position: absolute;
@@ -687,6 +687,9 @@ main {
 	.ucn-link:hover {
 		opacity: .7;
 		/* transition: ease .2s; */
+	}
+	.docai-subtitle-item {
+		color: #000000;
 	}
 	.todo-title-item {
 		color: #000;
@@ -713,6 +716,16 @@ main {
 	.todo-link:hover {
 		opacity: .7;
 		/* transition: ease .2s; */
+	}
+	.workout-subtitle {
+		left: 40vh;
+		top: 10vh;
+		position: absolute;
+	}
+	.workout-link {
+		left: 40vh;
+		top: 21vh;
+		position: absolute;
 	}
 	.link {
 		cursor: pointer;
