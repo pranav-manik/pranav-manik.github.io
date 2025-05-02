@@ -772,7 +772,8 @@ main {
   
   /* Modal Content */
   .modal-content {
-	background-color: #fefefe;
+	/* background-color: #fefefe; */
+	background-color: #e2e1e1;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
@@ -835,7 +836,7 @@ input, textarea {
 	width: 100%;
 	margin: 3px 0;
 	box-sizing: border-box;
-	background-color: #DADAD3;
+	/* background-color: #DADAD3; */
 }
 
 input:focus,
@@ -931,6 +932,7 @@ p {
 @media screen and (max-width: 67em) {
 	.modal-content {
 		width: 80%;
+		background-color: #53534f;
 	}
 	#formContainer {
 		width: 80%;
