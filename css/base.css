@@ -772,8 +772,7 @@ main {
   
   /* Modal Content */
   .modal-content {
-	/* background-color: #fefefe; */
-	background-color: #e2e1e1;
+	background-color: #fefefe;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
@@ -932,7 +931,6 @@ p {
 @media screen and (max-width: 67em) {
 	.modal-content {
 		width: 80%;
-		background-color: #53534f;
 	}
 	#formContainer {
 		width: 80%;
