@@ -324,7 +324,9 @@ main {
 	position: relative;
 	padding: 0 0 0 4rem;
 	margin: 0.5rem 0 0 0;
-	color: #7c4d07;
+	/* color: #7c4d07; */
+	filter: invert(1);
+	mix-blend-mode: difference;
 }
 .slideshow__item-title-three {
 	color: #a86b0f;
@@ -338,7 +340,7 @@ main {
 	/* position: absolute; */
 }
 .img-opacity {
-	opacity: 0.7;
+	opacity: 0.9;
 }
 #umbc-img {
 	height: 70px;
@@ -351,30 +353,25 @@ main {
 	top: .01vh;
 }
 .ucn-subtitle-item {
-	color: #a0640b;
+	filter: invert(1);
+	mix-blend-mode: difference;
 	max-width: 300px;
 }
 .todo-title-item {
-	color: #a86b0f;
-
+	color: #000;
 }
 .todo-subtitle-item {
-	color: #a86b0f; 
-
+	color: #000;
 }
-.todo-link-item {
-	/* color: #a0640b !important;÷ */
-}
-.todo-link {
-	color: #a0640b;
-}
+/* .todo-link {
+	color: #000;
+} */
 
 .todo-title-item,
 .todo-subtitle-item,
 .todo-link-item
- {
-    filter: invert(1); /* inverts colors */
-    mix-blend-mode: difference; /* blends opposite to background */
+{
+	color: #000;
 }
 
 .slideshow__item-title--larger {
@@ -382,7 +379,9 @@ main {
 }
 
 .slideshow__item-subtitle {
-	color: #7c4d07;
+	/* color: #7c4d07; */
+	filter: invert(1);
+	mix-blend-mode: difference;
 	max-width: 200px;
 	margin: 0.5rem 0 0 1rem;
 }
@@ -542,6 +541,20 @@ main {
 	.intro__content-title {
 		display: block;
 	}
+	.intro__enter {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem; /* adjusts space between "projects" and arrow */
+	}
+	.intro__enter {
+		display: inline-flex;
+		align-items: center;
+	}
+	
+	.projects-text {
+		position: relative;
+		top: -0.2vh; /* adjust this value - negative moves up, positive moves down */
+	}
 	.intro__title-wrap {
 		grid-area: 2 / 1 / 2 / 3;
 		justify-self: end;
@@ -603,7 +616,9 @@ main {
 	}
 	.slideshow__item-title {
 		font-size: 2rem;
-		color: #7c4d07
+		/* color: #7c4d07 */
+		filter: invert(1);
+		mix-blend-mode: difference;
 	}
 	.slideshow__item-title-three {
 		font-size: 2rem;
@@ -966,12 +981,4 @@ p {
 		width: 100%;
 	  }
 	
-}
-
-.todo-title-item,
-.todo-subtitle-item,
-.todo-link-item
- {
-    filter: invert(1); /* inverts colors */
-    mix-blend-mode: difference; /* blends opposite to background */
 }

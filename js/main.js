@@ -159,9 +159,7 @@
 	$( document ).ready(function() {
 		// Ascii art
 		console.log("                  /|         ,\n                ,///        /|\n               // //     ,///\n              // //     // //\n             // //     || ||\n             || ||    // //\n             || ||   // //\n             || ||  // //\n             || || || ||\n             \\\\,\\|,|\\_//\n              \\\\)\\)\\\\|/\n              )-.\"\" .-(\n             //^\\` `/^\\\\\n            //  |   |  \\\\\n          ,/_| 0| _ | 0|_\\,\n        /`    `\"=.v.=\"`    `\\\n       /`    _.\"{_,_}\"._    `\\\n       `/`  ` \\  |||  / `  `\\`\n       `\\\",_  \\\\=^~^=//  _,\"`\n            \"=,\\'-=-'/,=\"\n                '---'\n");
-		console.log( "quit lurkin" );
-
-
+		console.log( "quit it" );
 
 		// handle modals
 
@@ -210,9 +208,10 @@
 
 		//Link Styles
 		$("#ProjectPage").scroll(function() {
-			
+			let scrollTop = $(this).scrollTop();
+
 			//1st tab
-			if ($(this).scrollTop() < 400) {
+			if (scrollTop < 400) {
 			//   $("#firstTab").focus();
 			$("#firstTab").addClass("slideshow__nav-item--current");
 			}
@@ -221,35 +220,35 @@
 			//   $("#firstTab").blur();
 			}
 			//2st tab
-			if ($(this).scrollTop() < 650 && $(this).scrollTop() > 400) {
+			if (scrollTop < 650 && scrollTop > 400) {
 				$("#secondTab").addClass("slideshow__nav-item--current");
 			}
 			else {
 				$("#secondTab").removeClass("slideshow__nav-item--current");
 			}
 			//3rd tab
-			if ($(this).scrollTop() < 900 && $(this).scrollTop() > 650) {
+			if (scrollTop < 900 && scrollTop > 650) {
 			$("#thirdTab").addClass("slideshow__nav-item--current");
 			}
 			else {
 			$("#thirdTab").removeClass("slideshow__nav-item--current");
 			}
 			//4th tab
-			if ($(this).scrollTop() < 1250 && $(this).scrollTop() > 900) {
+			if (scrollTop < 1250 && scrollTop > 900) {
 			$("#fourthTab").addClass("slideshow__nav-item--current");
 			}
 			else {
 			$("#fourthTab").removeClass("slideshow__nav-item--current");
 			}
 			//5th tab
-			if ($(this).scrollTop() < 1600 && $(this).scrollTop() > 1250) {
+			if (scrollTop < 1600 && scrollTop > 1250) {
 			$("#fifthTab").addClass("slideshow__nav-item--current");
 			}
 			else {
 			$("#fifthTab").removeClass("slideshow__nav-item--current");
 			}
 			//6th tab
-			if ($(this).scrollTop() > 1600) {
+			if (scrollTop > 1600) {
 				$("#sixthTab").addClass("slideshow__nav-item--current");
 			}
 			else {
@@ -393,5 +392,6 @@
 			}
 		});
 		// panel.close()
+
 	});
 }
