@@ -381,8 +381,8 @@ main {
 .slideshow__item-subtitle {
 	/* color: #7c4d07; */
 	color: #000;
-	filter: invert(1);
-	mix-blend-mode: difference;
+	/* filter: invert(1);
+	mix-blend-mode: difference; */
 	max-width: 200px;
 	margin: 0.5rem 0 0 1rem;
 }
